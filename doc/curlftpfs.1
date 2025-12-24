@@ -188,14 +188,6 @@ In this case \fBkey\fP is used as an identifier  passed to  the  engine.
 You have to set the crypto engine with \fBengine\fP option.  "DER" format key
 file  currently  does not work because of a bug in OpenSSL.
 .TP
-.B krb4=<level>
-Enable kerberos4 authentication and use. The level must be entered and should
-be one of 'clear', 'safe', 'confidential'  or 'private'.  Should  you  use  a
-level that is not one of these, 'private' will instead be used.
-
-This option requires that the libcurl library was built  with  kerberos4
-support.  This is  not  very common.
-.TP
 .B no_verify_hostname
 (SSL) Curlftpfs will not verify the hostname when connecting to a SSL enabled
 server.
