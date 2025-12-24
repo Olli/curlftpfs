@@ -155,7 +155,6 @@ static struct fuse_opt ftpfs_opts[] = {
   FTPFS_OPT("capath=%s",          capath, 0),
   FTPFS_OPT("ciphers=%s",         ciphers, 0),
   FTPFS_OPT("interface=%s",       interface, 0),
-  FTPFS_OPT("krb4=%s",            krb4, 0),
   FTPFS_OPT("proxy=%s",           proxy, 0),
   FTPFS_OPT("proxytunnel",        proxytunnel, 1),
   FTPFS_OPT("proxy_anyauth",      proxyanyauth, 1),
@@ -1539,7 +1538,6 @@ static void usage(const char* progname) {
 "    capath=STR          CA directory to verify peer against (SSL)\n"
 "    ciphers=STR         SSL ciphers to use (SSL)\n"
 "    interface=STR       specify network interface/address to use\n"
-"    krb4=STR            enable krb4 with specified security level\n"
 "    proxy=STR           use host:port HTTP proxy\n"
 "    proxytunnel         operate through a HTTP proxy tunnel (using CONNECT)\n"
 "    proxy_anyauth       pick \"any\" proxy authentication method\n"
@@ -1695,8 +1693,8 @@ static void set_common_curl_stuff(CURL* easy) {
   }
 
   curl_easy_setopt_or_die(easy, CURLOPT_INTERFACE, ftpfs.interface);
-  curl_easy_setopt_or_die(easy, CURLOPT_KRB4LEVEL, ftpfs.krb4);
-  
+
+
   if (ftpfs.proxy) {
     curl_easy_setopt_or_die(easy, CURLOPT_PROXY, ftpfs.proxy);
   }

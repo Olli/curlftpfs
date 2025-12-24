@@ -47,7 +47,6 @@ struct ftpfs {
   char* capath;
   char* ciphers;
   char* interface;
-  char* krb4;
   char* proxy;
   int proxytunnel;
   int proxyanyauth;
